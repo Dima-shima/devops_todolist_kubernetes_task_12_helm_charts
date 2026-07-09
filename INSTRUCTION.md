@@ -1,3 +1,4 @@
+run bootstrap.sh
 helm list
 helm status todoapp-release
 helm get values todoapp-release
