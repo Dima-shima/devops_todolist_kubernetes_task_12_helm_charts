@@ -75,7 +75,7 @@ spec:
       volumes:
         - name: config-map
           configMap:
-            name: mysql
+            name: {{ .Chart.Name }}
 
       tolerations:
         - key: {{ .Values.mysql.tolerations.key }}
@@ -115,4 +115,4 @@ spec:
           - ReadWriteOnce
         resources:
           requests:
-            storage: 2Gi
+            storage: {{ .Values.mysql.pvc.requests.storage }}

@@ -30,3 +30,7 @@ mysql:
           requests:
             cpu: 500m
             memory: 1Gi
+
+  pvc:
+    requests:
+      storage: 2Gi
