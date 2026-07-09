@@ -8,18 +8,18 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: {{ .Chart.Name }}
-  minReplicas: {{ .Values.hpa.minReplicas }}
-  maxReplicas: {{ .Values.hpa.maxReplicas }}
+  minReplicas: {{ .Values.todoapp.hpa.minReplicas }}
+  maxReplicas: {{ .Values.todoapp.hpa.maxReplicas }}
   metrics:
   - type: Resource
     resource:
       name: cpu
       target:
         type: Utilization
-        averageUtilization: {{ .Values.hpa.cpu.averageUtilization }}
+        averageUtilization: {{ .Values.todoapp.hpa.cpu.averageUtilization }}
   - type: Resource
     resource:
       name: memory
       target:
         type: Utilization
-        averageUtilization: {{ .Values.hpa.memory.averageUtilization }}
+        averageUtilization: {{ .Values.todoapp.hpa.memory.averageUtilization }}
